@@ -11,6 +11,7 @@ This project follows [Semantic Versioning](https://semver.org/). Dates use ISO 8
 - Added visual-viewport-aware popup and touch-control positioning and hardened overlay sizing against theme CSS.
 - Expanded source documentation, WordPress appearance controls, and minified operational plugin assets.
 - Allowed finer WordPress brush tuning with 0.01 increments and a 0.001 Fog fade-speed minimum.
+- Added complete WordPress.org compatibility metadata through WordPress 7.0.
 
 ## [1.0.0] - 2026-07-13
 
