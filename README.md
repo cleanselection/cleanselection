@@ -51,7 +51,11 @@ Minification does not require npm, esbuild, Java, or committed tool binaries. Ru
 
 ## WordPress
 
-The maintained plugin is in [`wordpress/clean-selection`](wordpress/clean-selection). GitHub releases attach an installable `clean-selection-1.1.0.zip` package. See [WordPress integration](docs/WORDPRESS.md).
+The maintained plugin is in [`wordpress/clean-selection`](wordpress/clean-selection).
+
+[Download the latest WordPress plugin](https://github.com/cleanselection/cleanselection/releases/latest)
+
+The release page contains the installable `clean-selection-VERSION.zip`. See [WordPress integration](docs/WORDPRESS.md).
 
 ## Documentation
 
