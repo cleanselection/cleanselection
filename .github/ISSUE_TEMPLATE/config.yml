@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2026 kotoverse
+# SPDX-License-Identifier: MIT
+
+blank_issues_enabled: false
+contact_links:
+  - name: Integration questions
+    url: https://github.com/cleanselection/cleanselection/discussions
+    about: Ask for help or discuss an integration.
+  - name: Security report
+    url: https://github.com/cleanselection/cleanselection/security/advisories/new
+    about: Report a suspected vulnerability privately.

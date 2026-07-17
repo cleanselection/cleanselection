@@ -1,0 +1,16 @@
+/*
+ * SPDX-FileCopyrightText: 2026 kotoverse
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+html.clean-selection-wp-active,
+html.clean-selection-wp-active body {
+  overflow-x: clip;
+}
+
+@supports not (overflow-x: clip) {
+  html.clean-selection-wp-active,
+  html.clean-selection-wp-active body {
+    overflow-x: hidden;
+  }
+}

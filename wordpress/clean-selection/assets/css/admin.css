@@ -1,0 +1,133 @@
+/*
+ * SPDX-FileCopyrightText: 2026 kotoverse
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+.cswp-settings {
+  --cswp-ink: #17243a;
+  --cswp-muted: #64748b;
+  --cswp-line: #dbe4ef;
+  --cswp-panel: #ffffff;
+  --cswp-soft: #f5f8fc;
+  max-width: 1180px;
+  color: var(--cswp-ink);
+}
+
+.cswp-settings * { box-sizing: border-box; }
+
+.cswp-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 22px 0 20px;
+  padding: 30px 34px;
+  border: 1px solid #d8e4f2;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(30, 144, 255, .16), transparent 34%),
+    linear-gradient(135deg, #fff, #f3f8ff);
+  box-shadow: 0 18px 48px rgba(31, 57, 90, .08);
+}
+
+.cswp-hero h1 { margin: 3px 0 8px; color: var(--cswp-ink); font-size: 32px; line-height: 1.15; }
+.cswp-hero p { max-width: 720px; margin: 0; color: var(--cswp-muted); font-size: 15px; }
+.cswp-kicker { color: #1678d2; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+
+.cswp-hero__swatch { position: relative; width: 130px; height: 74px; flex: 0 0 auto; }
+.cswp-hero__swatch span { position: absolute; border-radius: 999px; background: var(--cswp-accent); filter: blur(1px); opacity: .2; }
+.cswp-hero__swatch span:nth-child(1) { inset: 20px 0 12px 12px; }
+.cswp-hero__swatch span:nth-child(2) { inset: 5px 32px 30px 0; opacity: .32; }
+.cswp-hero__swatch span:nth-child(3) { inset: 34px 18px 0 42px; opacity: .42; }
+
+.cswp-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.cswp-card {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--cswp-line);
+  border-radius: 18px;
+  background: var(--cswp-panel);
+  box-shadow: 0 8px 24px rgba(31, 57, 90, .05);
+}
+.cswp-card--wide { grid-column: 1 / -1; }
+.cswp-card__heading { display: flex; gap: 13px; margin-bottom: 21px; }
+.cswp-card__heading > span { display: grid; place-items: center; width: 29px; height: 29px; flex: 0 0 auto; border-radius: 9px; background: #e9f4ff; color: #1678d2; font-weight: 800; }
+.cswp-card h2, .cswp-subcard h3 { margin: 0; color: var(--cswp-ink); }
+.cswp-card h2 { font-size: 18px; }
+.cswp-card__heading p, .cswp-subcard > p { margin: 4px 0 0; color: var(--cswp-muted); }
+
+.cswp-check-grid, .cswp-choice-grid, .cswp-toggle-row { display: grid; gap: 10px; }
+.cswp-check-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cswp-choice-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cswp-toggle-row { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+.cswp-check-grid label, .cswp-choice-grid label, .cswp-toggle-row label, .cswp-switch {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 13px;
+  border: 1px solid var(--cswp-line);
+  border-radius: 12px;
+  background: var(--cswp-soft);
+}
+.cswp-check-grid input, .cswp-choice-grid input, .cswp-toggle-row input, .cswp-switch input { margin-top: 2px; }
+.cswp-switch--spaced { margin-top: 16px; }
+.cswp-check-grid label > span { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; }
+.cswp-check-grid code { font-size: 10px; }
+.cswp-choice-grid strong, .cswp-choice-grid small { display: block; }
+.cswp-choice-grid small { margin-top: 4px; color: var(--cswp-muted); line-height: 1.35; }
+
+.cswp-field-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+.cswp-field-grid--compact { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; }
+.cswp-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.cswp-field--wide { margin-top: 17px; }
+.cswp-field__label { font-weight: 650; color: #26364d; }
+.cswp-field small { color: var(--cswp-muted); line-height: 1.35; }
+.cswp-field input[type="text"], .cswp-field input[type="number"], .cswp-field select { width: 100%; min-height: 39px; border-color: #cbd7e5; border-radius: 9px; background: #fff; }
+.cswp-input-with-unit { display: flex; align-items: center; gap: 7px; }
+.cswp-input-with-unit input { flex: 1 1 auto; min-width: 0; }
+.cswp-input-with-unit > span { color: var(--cswp-muted); }
+.cswp-color-input { display: flex; align-items: center; gap: 9px; min-height: 39px; }
+.cswp-color-input input { width: 52px; height: 36px; padding: 2px; border: 1px solid #cbd7e5; border-radius: 9px; background: #fff; }
+
+.cswp-subcard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; margin-top: 22px; }
+.cswp-subcard { padding: 19px; border: 1px solid var(--cswp-line); border-radius: 15px; background: var(--cswp-soft); }
+.cswp-subcard .cswp-field-grid { margin-top: 16px; }
+
+.cswp-advanced { padding: 0; overflow: hidden; }
+.cswp-advanced summary { padding: 19px 24px; cursor: pointer; color: #26364d; font-size: 15px; font-weight: 700; }
+.cswp-advanced[open] summary { border-bottom: 1px solid var(--cswp-line); }
+.cswp-advanced > .cswp-field-grid { padding: 22px 24px 25px; }
+
+.cswp-save {
+  position: sticky;
+  bottom: 14px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 18px;
+  padding: 15px 18px;
+  border: 1px solid #cfe0f2;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 16px 40px rgba(31, 57, 90, .13);
+  backdrop-filter: blur(12px);
+}
+.cswp-save strong, .cswp-save span { display: block; }
+.cswp-save span { margin-top: 3px; color: var(--cswp-muted); }
+.cswp-save .button-primary { min-height: 40px; padding-inline: 19px; border-radius: 9px; }
+
+@media (max-width: 900px) {
+  .cswp-layout, .cswp-subcard-grid { grid-template-columns: 1fr; }
+  .cswp-card--wide { grid-column: auto; }
+  .cswp-field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cswp-choice-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .cswp-hero { padding: 23px; }
+  .cswp-hero__swatch { display: none; }
+  .cswp-field-grid, .cswp-field-grid--compact, .cswp-check-grid, .cswp-toggle-row { grid-template-columns: 1fr; }
+  .cswp-save { position: static; align-items: stretch; flex-direction: column; }
+}
