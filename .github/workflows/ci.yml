@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2026 kotoverse
+# SPDX-License-Identifier: MIT
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: npm run build
+      - run: node scripts/fetch-terser.mjs
+      - run: npm run minify
+      - run: npm run docs
+      - run: npm test
+      - run: npm run check
+      - run: node --check src/cleanselection.js
+      - run: node --check dist/cleanselection.min.js
+      - name: Verify generated files are current
+        run: git diff --exit-code -- dist docs/FUNCTIONS.md wordpress/clean-selection/assets/js/cleanselection.js wordpress/clean-selection/assets/js/cleanselection.min.js

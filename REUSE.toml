@@ -1,0 +1,22 @@
+version = 1
+SPDX-PackageName = "Clean Selection"
+SPDX-PackageSupplier = "kotoverse <https://github.com/kotoverse>"
+SPDX-PackageDownloadLocation = "https://github.com/cleanselection/cleanselection"
+
+[[annotations]]
+path = [
+  "package.json",
+  "assets/clean-selection-logo.png"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 kotoverse"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = [
+  "wordpress/clean-selection/LICENSE",
+  "wordpress/clean-selection/readme.txt"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 kotoverse"
+SPDX-License-Identifier = "GPL-2.0-or-later"

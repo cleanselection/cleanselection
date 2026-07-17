@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 kotoverse
+# SPDX-License-Identifier: MIT
+
+* text=auto eol=lf
+*.png binary
+*.zip binary
+dist/*.js linguist-generated=true
+docs/FUNCTIONS.md linguist-generated=true
+wordpress/clean-selection/assets/js/cleanselection.js linguist-generated=true
+wordpress/clean-selection/assets/js/cleanselection.min.js linguist-generated=true
