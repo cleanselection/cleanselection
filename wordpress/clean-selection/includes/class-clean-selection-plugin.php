@@ -165,7 +165,7 @@ final class Plugin {
 			'brush_turbulence'         => $this->clamp_number( $input['brush_turbulence'] ?? null, $defaults['brush_turbulence'], 0, 0.6 ),
 			'brush_turbulence_speed'   => $this->clamp_number( $input['brush_turbulence_speed'] ?? null, $defaults['brush_turbulence_speed'], 0.1, 1.2 ),
 			'brush_final_alpha'        => $this->clamp_number( $input['brush_final_alpha'] ?? null, $defaults['brush_final_alpha'], 0.1, 0.6 ),
-			'brush_fade_speed'         => $this->clamp_number( $input['brush_fade_speed'] ?? null, $defaults['brush_fade_speed'], 0.01, 0.08 ),
+			'brush_fade_speed'         => $this->clamp_number( $input['brush_fade_speed'] ?? null, $defaults['brush_fade_speed'], 0.001, 0.08 ),
 			'brush_grow_speed'         => $this->clamp_number( $input['brush_grow_speed'] ?? null, $defaults['brush_grow_speed'], 0.01, 0.08 ),
 			'brush_padding_ratio'      => $this->clamp_number( $input['brush_padding_ratio'] ?? null, $defaults['brush_padding_ratio'], 0.1, 0.6 ),
 			'cursor'                   => $this->sanitize_cursor( $input['cursor'] ?? '' ),
@@ -293,15 +293,15 @@ final class Plugin {
 							<?php $this->render_color_field( $settings, 'accent_color', __( 'Selection and accent color', 'clean-selection' ), __( 'Used by the cloud and primary popup action.', 'clean-selection' ) ); ?>
 							<?php $this->render_color_field( $settings, 'copied_color', __( 'Copied-fragment color', 'clean-selection' ), __( 'Distinguishes already-copied excerpts in fragment mode.', 'clean-selection' ) ); ?>
 							<label class="cswp-field"><span class="cswp-field__label"><?php esc_html_e( 'Cursor', 'clean-selection' ); ?></span><select name="<?php echo esc_attr( self::OPTION ); ?>[cursor]"><option value="" <?php selected( $settings['cursor'], '' ); ?>><?php esc_html_e( 'Browser / theme default', 'clean-selection' ); ?></option><option value="crosshair" <?php selected( $settings['cursor'], 'crosshair' ); ?>><?php esc_html_e( 'Crosshair', 'clean-selection' ); ?></option><option value="default" <?php selected( $settings['cursor'], 'default' ); ?>><?php esc_html_e( 'Arrow', 'clean-selection' ); ?></option><option value="text" <?php selected( $settings['cursor'], 'text' ); ?>><?php esc_html_e( 'Text cursor', 'clean-selection' ); ?></option></select></label>
-							<?php $this->render_number_field( $settings, 'brush_hardness', __( 'Hardness', 'clean-selection' ), 0.05, 0.85, 0.05 ); ?>
+							<?php $this->render_number_field( $settings, 'brush_hardness', __( 'Hardness', 'clean-selection' ), 0.05, 0.85, 0.01 ); ?>
 							<?php $this->render_number_field( $settings, 'brush_max_alpha', __( 'In-progress opacity', 'clean-selection' ), 0.05, 0.4, 0.01 ); ?>
-							<?php $this->render_number_field( $settings, 'brush_spacing', __( 'Stamp spacing', 'clean-selection' ), 0.15, 0.75, 0.05 ); ?>
-							<?php $this->render_number_field( $settings, 'brush_turbulence', __( 'Turbulence', 'clean-selection' ), 0, 0.6, 0.05 ); ?>
-							<?php $this->render_number_field( $settings, 'brush_turbulence_speed', __( 'Turbulence speed', 'clean-selection' ), 0.1, 1.2, 0.05 ); ?>
+							<?php $this->render_number_field( $settings, 'brush_spacing', __( 'Stamp spacing', 'clean-selection' ), 0.15, 0.75, 0.01 ); ?>
+							<?php $this->render_number_field( $settings, 'brush_turbulence', __( 'Turbulence', 'clean-selection' ), 0, 0.6, 0.01 ); ?>
+							<?php $this->render_number_field( $settings, 'brush_turbulence_speed', __( 'Turbulence speed', 'clean-selection' ), 0.1, 1.2, 0.01 ); ?>
 							<?php $this->render_number_field( $settings, 'brush_final_alpha', __( 'Final opacity', 'clean-selection' ), 0.1, 0.6, 0.01 ); ?>
-							<?php $this->render_number_field( $settings, 'brush_fade_speed', __( 'Fog fade speed', 'clean-selection' ), 0.01, 0.08, 0.005 ); ?>
+							<?php $this->render_number_field( $settings, 'brush_fade_speed', __( 'Fog fade speed', 'clean-selection' ), 0.001, 0.08, 0.001 ); ?>
 							<?php $this->render_number_field( $settings, 'brush_grow_speed', __( 'Cloud grow speed', 'clean-selection' ), 0.01, 0.08, 0.005 ); ?>
-							<?php $this->render_number_field( $settings, 'brush_padding_ratio', __( 'Cloud padding ratio', 'clean-selection' ), 0.1, 0.6, 0.05 ); ?>
+							<?php $this->render_number_field( $settings, 'brush_padding_ratio', __( 'Cloud padding ratio', 'clean-selection' ), 0.1, 0.6, 0.01 ); ?>
 						</div>
 						<div class="cswp-subcard-grid"><?php $this->render_geometry_card( $settings, 'content', __( 'Post geometry', 'clean-selection' ), __( 'For regular post and page typography.', 'clean-selection' ) ); ?><?php $this->render_geometry_card( $settings, 'comment', __( 'Comment geometry', 'clean-selection' ), __( 'For typically smaller comment typography.', 'clean-selection' ) ); ?></div>
 					</section>

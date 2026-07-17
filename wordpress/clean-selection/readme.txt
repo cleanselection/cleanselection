@@ -38,6 +38,7 @@ The operational Clean Selection core is minified with Terser. Its complete reada
 == Changelog ==
 
 = 1.1.0 =
+* Allowed 0.01 increments for fractional brush controls and 0.001 values for Fog fade speed.
 * Added separate post and comment geometry, complete brush and cursor controls, copied-fragment color, centered popups, and a styled settings screen.
 * Added block-theme comment defaults, excluded media attachments, and yielded overlapping pages to Re:Likes.
 * Preserved collected fragments across resize and rotation while ordinary single selections remain destructive on reflow.

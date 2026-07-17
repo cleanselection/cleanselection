@@ -37,6 +37,24 @@ test('WordPress operational core is generated from the canonical minified build'
   assert.deepEqual(wordpress, minified);
 });
 
+test('WordPress fractional brush controls retain fine input precision', async () => {
+  const source = await readFile(
+    resolve(root, 'wordpress/clean-selection/includes/class-clean-selection-plugin.php'),
+    'utf8'
+  );
+  for (const key of [
+    'brush_hardness',
+    'brush_spacing',
+    'brush_turbulence',
+    'brush_turbulence_speed',
+    'brush_padding_ratio'
+  ]) {
+    assert.match(source, new RegExp(`'${key}'[^?]+0\\.01 \\); \\?>`), `${key} must use a 0.01 step`);
+  }
+  assert.match(source, /'brush_fade_speed'[^?]+0\.001, 0\.08, 0\.001 \); \?>/);
+  assert.match(source, /'brush_fade_speed'.+0\.001, 0\.08 \),/);
+});
+
 test('all browser builds retain the MIT notice', async () => {
   for (const file of ['dist/cleanselection.js', 'dist/cleanselection.min.js']) {
     const contents = await readFile(resolve(root, file), 'utf8');
